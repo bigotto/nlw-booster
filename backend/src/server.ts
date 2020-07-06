@@ -3,6 +3,13 @@ import cors from 'cors';
 import path from 'path';
 import routes from './routes';
 import { errors } from 'celebrate';
+import os from 'os';
+
+
+let ip = os.networkInterfaces();
+ip = Object.values(ip)[0];
+const ipLocal = ip[1].address
+console.log(ipLocal)
 
 const app = express();
 app.use(cors());
